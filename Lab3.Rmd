@@ -21,7 +21,7 @@ library(see)
 # Load Datasets
 ```{r}
 
-lab3data <- read.csv("C:/Users/Colin/Downloads/lab3data.csv")
+lab3data <- read.csv("C:/Users/Colin/Documents/Github/Website/Lab3/lab3data.csv")
 
 ```
 
@@ -32,7 +32,7 @@ lab3data <- read.csv("C:/Users/Colin/Downloads/lab3data.csv")
 #Listwise deletion
 list_lab3data<- drop_na(lab3data)
 
-#pair wise deletion will only be used when you run the actual analysis
+#pair wise deletion will only be used when you run the actual analysis using "na.rm = TRUE"
 
 ```
 
@@ -75,28 +75,42 @@ lab3data %>% count(RSE2_R)
 
 # Create Composites
 ```{r}
+
 #Depending on the scale, sometimes you need to average across the items, other times you might need to sum 
 
 
 #Fill in the items
-lab3data <- lab3data %>%
-  mutate(RSE = rowMeans(cbind(RSE1, ..., RSE10)))
+#lab3data <- lab3data %>%
+  #mutate(RSE = rowMeans(cbind(RSE1, ..., RSE10)))
 
 #Create another composite for SWL, but this time use rowSums
 
 ```
 
 
-# Visualization
+# Get Summary Descriptive Statistics
+```{r}
+
+
+
+```
+
+# Q1: Descrptively, which group has a higher self-esteem? What about life satisfaction? Is the relationship between self-esteem and life satisfaction stronger for males or for females? 
+
+
+
+
+# Visualization of Data Distribution
 ```{r}
 
 lab3data<- lab3data %>%
   drop_na(Gender)
 
 
-ggplot(lab3data, aes(x = Gender, y = RSE1), na.rm = TRUE) + geom_violin(aes(fill=Gender)) + scale_fill_simpsons() + theme_modern()
+ggplot(lab3data, aes(x = Gender, y = RSE1)) + geom_violin(aes(fill=Gender)) + scale_fill_simpsons() + theme_modern()
 
-#Create a plot for SWL by Gender
+#Create a plot for SWL by Gender with a different color palette
 
 ```
 
+# Q2: What you can tell from looking at a violin plot? What you cannot tell? What inferences you can make based on the two violin plots? 
