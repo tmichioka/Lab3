@@ -146,5 +146,11 @@ ggplot(lab3data, aes(x = Gender, y = SWL)) + geom_violin(aes(fill=Gender)) + sca
 
 # Q2: What you can tell from looking at a violin plot? What you cannot tell? What inferences you can make based on the two violin plots? 
 
-A violin plot shows us distribution of scores.
-A violin plot does not tell mean score, standard deviation and standard error.
+A violin plot shows us distribution of scores, range of scores, and mode.
+
+A violin plot does not tell total number of subjects, correlation between different variables, median, mean score, standard deviation and standard error.
+
+According to the violin plot for RSE, we can infer that there is also no significant self-esteem difference between female and male. However, self-esteem for males have two modes (3 and 4) while female has only one mode (3). Overall, self-esteem scores for most males and females have higher than 2 score.
+
+According to the violin plots for SWL, we can infer that there is also no significant life satisfaction difference between female and male. However, there are more females with low satisfaction (i.e., overall life satisfaction of approximately 10/25) than males and there are more males with high life satisfaction (i.e., overall life satisfaction of approximately 20/25) than females.
+
